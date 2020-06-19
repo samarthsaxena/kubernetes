@@ -1,3 +1,5 @@
+<h3>Let's get started with he installation</h3>
+<hr/>
 1.First create a namespace (ignore jenkins.namespace.yaml if you choose this way of creating the namespace)<br/>
 <code>#kubectl create namespace jenkins</code><br/>
 <br/>
@@ -43,3 +45,23 @@ Need to change the service's nameserver config in order to tell kube-dns to work
 
 <br/><br/>
 This is IMP! because the plugins we need can only be installed if update site is reachable from the pod.<br/>
+
+<hr/>
+
+<h3>Let's clean up the mess ;)</h3>
+<hr/>
+<b>Objective:</b><br/>
+To clean the kubernetes master n workers and just remove all of the stuffs created in above section.<br/>
+
+Directly deleting the namespace would help but not recommended!! <br/>
+
+Just execute the below commands:<br/>
+#kubectl get pods --namespace jenkins -o wide : look at the node(worker) and remember it.
+#kubectl -n jenkins delete -f jenkins_pod_deplyment_yamls/<br/>
+It should drop everything which was created/applied earlier.<br/>
+then you may want to remove the persistent valumes as well. Now ssh to the node you remember from get pods.<br/>
+Just rm -rf to that entire directory manually :(  <br/>
+
+<b>Yes few things are good to be done manually ;)</b>
+
+
