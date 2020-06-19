@@ -8,10 +8,10 @@
 <code>#kubectl --namespace jenkins apply -f jenkins_pod_deplyment_yamls/</code><br/>
 <br/>
 3. Get the initial password from the jenkins pod logs<br/>
-<code>#kubectl --namespace jenkins logs <jenkins_pod_name> </code><br/>
+<code>#kubectl --namespace jenkins logs jenkins_pod_name </code><br/>(get the pod name # kubectl get pods -n jenkins)
 <br/>
 4. Add a port forwarding to this pod<br/>
-<code>#kubectl -n jenkins port-forward --address 0.0.0.0 pod/<jenkins_pod_name> <any free port>:8080</code><br/>
+<code>#kubectl -n jenkins port-forward --address 0.0.0.0 pod/jenkins_pod_name <any free port>:8080</code><br/>
 example:<br/>
  <code>kubectl -n jenkins port-forward --address 0.0.0.0 pod/jenkins-7c4d5b787c-cnk48 9090:8080</code><br/>
  <br/>
