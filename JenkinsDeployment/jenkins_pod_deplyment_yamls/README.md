@@ -1,4 +1,5 @@
-<h3>Let's get started with he installation</h3>
+<hr/>
+<h3 style = 'color: green;'>Let's get started with the installation</h3>
 <hr/>
 1.First create a namespace (ignore jenkins.namespace.yaml if you choose this way of creating the namespace)<br/>
 <code>#kubectl create namespace jenkins</code><br/>
@@ -48,7 +49,7 @@ This is IMP! because the plugins we need can only be installed if update site is
 
 <hr/>
 
-<h3>Let's clean up the mess ;)</h3>
+<h3 style='color:red;'>Let's clean up the mess ;)</h3>
 <hr/>
 <b>Objective:</b><br/>
 To clean the kubernetes master n workers and just remove all of the stuffs created in above section.<br/>
